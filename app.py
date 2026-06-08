@@ -1,5 +1,3 @@
-import os
-os.system("pip install plotly openpyxl pandas==2.1.3 streamlit==1.32.0")
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -10,7 +8,7 @@ st.title("🏨 Spacez AI Review Intelligence — Operations Control Workspace")
 st.markdown("### *Target Stakeholder Focus: Regional Operations Team*")
 st.markdown("---")
 
-# 2. Hardcoded Clean Dataset (Bypasses all file reading and caching memory leaks)
+# 2. Dataset Ingestion (Bypasses all file reading and caching leaks)
 raw_data = [
     {"review_id": "RV001", "platform": "Airbnb", "property_name": "Serenity Villa", "caretaker_name": "Suresh Naik", "normalized_rating": 4.0, "review_text": "Beautiful villa and Suresh was incredibly helpful. Only issue was the pool looked green and wasn't cleaned during our 3-night stay.", "ai_tags": "Structural Asset/Maintenance"},
     {"review_id": "RV002", "platform": "Booking.com", "property_name": "Serenity Villa", "caretaker_name": "Suresh Naik", "normalized_rating": 3.0, "review_text": "Lovely property but the swimming pool was not maintained - murky water the whole time. Caretaker was polite and responsive though.", "ai_tags": "Structural Asset/Maintenance"},
@@ -41,8 +39,8 @@ with col3:
 st.markdown("---")
 
 # THE INTERACTIVE AI SANDBOX
-st.subheader(" Live AI Agent Routing Sandbox")
-st.markdown(" Paste or type a custom guest review to test the agent's real-time semantic categorization and routing logic.")
+st.subheader("🔥 Live AI Agent Routing Sandbox")
+st.markdown("🧑‍💻 **Hiring Team Feature:** Paste or type a custom guest review to test the agent's real-time semantic categorization and routing logic.")
 
 candidate_review = st.text_area(
     "Test Review Input:", 
