@@ -1,3 +1,5 @@
+import os
+os.system("pip install plotly openpyxl pandas==2.1.3 streamlit==1.32.0")
 import streamlit as st
 import pandas as pd
 import plotly.express as px
