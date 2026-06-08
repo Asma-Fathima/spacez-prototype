@@ -39,8 +39,8 @@ with col3:
 st.markdown("---")
 
 # THE INTERACTIVE AI SANDBOX
-st.subheader("🔥 Live AI Agent Routing Sandbox")
-st.markdown("🧑‍💻 **Hiring Team Feature:** Paste or type a custom guest review to test the agent's real-time semantic categorization and routing logic.")
+st.subheader(" Live AI Agent Routing Sandbox")
+st.markdown(" Paste or type a custom guest review to test the agent's real-time semantic categorization and routing logic.")
 
 candidate_review = st.text_area(
     "Test Review Input:", 
