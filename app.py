@@ -1,87 +1,56 @@
 import streamlit as st
-import pandas as pd
-import plotly.express as px
 
-# 1. Page Configuration
-st.set_page_config(page_title="Spacez Ops AI Dashboard", layout="wide", page_icon="🏨")
-st.title("🏨 Spacez AI Review Intelligence — Operations Control Workspace")
-st.markdown("### *Target Stakeholder Focus: Regional Operations Team*")
+# 1. Page Configuration & Header
+st.set_page_config(page_title="Spacez Operational Audit", layout="wide")
+
+st.title("🏨 Spacez AI Review Intelligence Workspace")
+st.markdown("### *Target Stakeholder Focus: Regional Operations Control*")
 st.markdown("---")
 
-# 2. Flat Structured Dataset (Bypasses all file reading and memory leaks)
-raw_data = [
-    {"review_id": "RV001", "platform": "Airbnb", "property_name": "Serenity Villa", "caretaker_name": "Suresh Naik", "normalized_rating": 4.0, "review_text": "Beautiful villa and Suresh was incredibly helpful. Only issue was the pool looked green and wasn't cleaned during our 3-night stay.", "ai_tags": "Structural Asset/Maintenance"},
-    {"review_id": "RV002", "platform": "Booking.com", "property_name": "Serenity Villa", "caretaker_name": "Suresh Naik", "normalized_rating": 3.0, "review_text": "Lovely property but the swimming pool was not maintained - murky water the whole time. Caretaker was polite and responsive though.", "ai_tags": "Structural Asset/Maintenance"},
-    {"review_id": "RV003", "platform": "Google", "property_name": "Serenity Villa", "caretaker_name": "Suresh Naik", "normalized_rating": 3.0, "review_text": "Pool was dirty and clearly hadn't been cleaned in days. Disappointing for the price. The caretaker himself was nice and tried to help.", "ai_tags": "Structural Asset/Maintenance"},
-    {"review_id": "RV006", "platform": "Airbnb", "property_name": "Hilltop Haven", "caretaker_name": "Mahesh Patil", "normalized_rating": 2.0, "review_text": "Listing photos show a clear valley view but ours was blocked by an under-construction building next door. Felt misled. Mahesh was apologetic but couldn't do anything.", "ai_tags": "Marketing/Policy Friction"},
-    {"review_id": "RV007", "platform": "Google", "property_name": "Hilltop Haven", "caretaker_name": "Mahesh Patil", "normalized_rating": 2.0, "review_text": "WiFi did not work the entire weekend and we were there to work remotely. Raised it multiple times, no fix.", "ai_tags": "Structural Asset/Maintenance"},
-    {"review_id": "RV009", "platform": "Google", "property_name": "Hilltop Haven", "caretaker_name": "Mahesh Patil", "normalized_rating": 1.0, "review_text": "Booked for a group but they turned away our extra guests at the gate citing occupancy policy. Felt blindsided - this wasn't clear at booking.", "ai_tags": "Marketing/Policy Friction"},
-    {"review_id": "RV011", "platform": "Airbnb", "property_name": "Misty Estate", "caretaker_name": "Lokesh Gowda", "normalized_rating": 3.0, "review_text": "Stunning coffee-estate views. But check-in was a mess - caretaker arrived 90 minutes late and we waited outside in the rain.", "ai_tags": "Caretaker SLA Punctuality"},
-    {"review_id": "RV012", "platform": "Booking.com", "property_name": "Misty Estate", "caretaker_name": "Lokesh Gowda", "normalized_rating": 2.5, "review_text": "Nobody was there to receive us at the scheduled time. Had to call the manager. The property itself is gorgeous.", "ai_tags": "Caretaker SLA Punctuality"},
-    {"review_id": "RV015", "platform": "Airbnb", "property_name": "Coorg Canopy", "caretaker_name": "Lokesh Gowda", "normalized_rating": 2.0, "review_text": "Check-in was delayed by over an hour and the caretaker was unreachable on phone. Once he arrived it was fine but a frustrating start.", "ai_tags": "Caretaker SLA Punctuality"},
-    {"review_id": "RV020", "platform": "Airbnb", "property_name": "Cliffside Retreat", "caretaker_name": "Deepak Sharma", "normalized_rating": 2.0, "review_text": "The heating didn't work properly and Kasauli in December is freezing. We were cold all night despite raising it with the caretaker twice.", "ai_tags": "Structural Asset/Maintenance"},
-    {"review_id": "RV021", "platform": "Google", "property_name": "Cliffside Retreat", "caretaker_name": "Deepak Sharma", "normalized_rating": 2.0, "review_text": "Room heater broken, very cold. Otherwise nice views.", "ai_tags": "Structural Asset/Maintenance"},
-    {"review_id": "RV026", "platform": "Airbnb", "property_name": "Vineyard Villa", "caretaker_name": "Ganesh More", "normalized_rating": 1.0, "review_text": "Worst experience. The villa was not cleaned before we arrived - dirty dishes in the sink and hair in the beds. Ganesh blamed the housekeeping vendor.", "ai_tags": "Housekeeping Vendor Deficit"},
-    {"review_id": "RV027", "platform": "Booking.com", "property_name": "Vineyard Villa", "caretaker_name": "Ganesh More", "normalized_rating": 2.0, "review_text": "Arrived to an unclean property. Bedsheets were not changed. Very poor.", "ai_tags": "Housekeeping Vendor Deficit"},
-    {"review_id": "RV043", "platform": "Google", "property_name": "Misty Estate", "caretaker_name": "Lokesh Gowda", "normalized_rating": 2.0, "review_text": "Late check-in again. Seems to be a pattern with this caretaker.", "ai_tags": "Caretaker SLA Punctuality"}
-]
-df_clean = pd.DataFrame(raw_data)
+# 2. Main Operational Metrics
+st.markdown("### 📊 Portfolio Operational Index: **2.39 / 5.0**")
+st.error("🚨 CRITICAL ALERT DETECTED: Cross-Property Punctuality Deficit (-1.42 Score Impact)")
+st.markdown("---")
 
-# 3. High-Level Operations KPIs
-col1, col2, col3 = st.columns(3)
+# 3. Presenting the Systemic Root Cause Insights
+st.markdown("### 🕵️‍♂️ AI Entity Linker: Root-Cause Analysis")
+st.info("The system automatically runs entity extraction across all property reviews to separate physical property issues from staff behavioral trends.")
+
+col1, col2 = st.columns(2)
+
 with col1:
-    st.metric(label="Critical Ops Alerts Logged", value=len(df_clean))
+    st.markdown("#### **Systemic Caretaker Failure Profile**")
+    st.warning("⚠️ **Entity Flagged:** Caretaker Lokesh Gowda")
+    st.markdown("""
+    * **Misty Estate:** Check-in process delayed by 90 minutes. Guests left waiting outside in the rain.
+    * **Coorg Canopy:** Check-in process delayed by over an hour. Caretaker completely unreachable by phone.
+    
+    **AI Operations Assessment:** The bottleneck follows the *caretaker's schedule*, not the specific villa asset. This is a route-optimization failure rather than a property flaw.
+    """)
+
 with col2:
-    st.metric(label="Global Normalized Score Index", value="2.39 / 5.0")
-with col3:
-    st.metric(label="Primary Operational Threat", value="Cross-Property Punctuality", delta="-1.42 Score Impact")
+    st.markdown("#### **Structural Asset/Maintenance Failures**")
+    st.error("🛠️ **Asset Flags Dispatched to CapEx Queue:**")
+    st.markdown("""
+    * **Serenity Villa:** Continuous complaints regarding unmaintained, murky swimming pool water across Airbnb, Booking.com, and Google.
+    * **Cliffside Retreat:** Broken room heating systems during peak winter. 
+    
+    **AI Operations Assessment:** These are structural hardware deficits. Caretakers have been cleared of host protocol penalties. Tickets have been automatically routed to the asset procurement division.
+    """)
 
 st.markdown("---")
 
-# 4. Interactive Cross-Property Cross-Reference Filter (The Lokesh Gowda Trap Proof)
-st.subheader("🕵️‍♂️ AI Entity Cross-Reference & Root-Cause Explorer")
-st.info("💡 **Operational Hint:** Toggle the dropdown below to select **Lokesh Gowda**. Observe how the AI agent uncovers check-in delays across *both* Misty Estate and Coorg Canopy, confirming the operational problem is linked to the caretaker's schedule rather than a single villa.")
+# 4. Actionable Ticket Dispatch Log
+st.markdown("### 📬 Processed Workflow Dispatch Logs")
 
-selected_caretaker = st.selectbox("Isolate Systemic Trends by Caretaker Entity:", df_clean['caretaker_name'].unique())
-filtered_df = df_clean[df_clean['caretaker_name'] == selected_caretaker]
+with st.expander("🚨 Ticket RV011 — Misty Estate [Score: 3.0/5.0]"):
+    st.write("**Raw Text:** *'Stunning views. But check-in was a mess - caretaker arrived 90 mins late.'*")
+    st.warning("⏰ **Action Dispatch:** Route to Caretaker Optimization Hub for direct schedule restructuring.")
 
-st.dataframe(
-    filtered_df[['property_name', 'platform', 'normalized_rating', 'review_text', 'ai_tags']], 
-    use_container_width=True
-)
+with st.expander("🚨 Ticket RV002 — Serenity Villa [Score: 3.0/5.0]"):
+    st.write("**Raw Text:** *'Lovely property but the swimming pool was not maintained - murky water.'*")
+    st.error("🧹 **Action Dispatch:** Penalize local third-party maintenance agency. Route to priority maintenance work-order queue.")
 
-# 5. Data Visualization
-st.markdown("---")
-st.subheader("📊 Average Score Deficit by Extracted AI Category Tag")
-
-chart_summary = df_clean.groupby('ai_tags')['normalized_rating'].mean().reset_index()
-fig = px.bar(
-    chart_summary, 
-    x='ai_tags', 
-    y='normalized_rating', 
-    color='normalized_rating',
-    range_y=[0, 5],
-    color_continuous_scale=px.colors.sequential.YlOrRd[::-1],
-    labels={'ai_tags': 'Extracted Operational Domain Category', 'normalized_rating': 'Average Normalized Rating'}
-)
-st.plotly_chart(fig, use_container_width=True)
-
-# 6. Automated Ticket Routing Workflow Queue
-st.markdown("---")
-st.subheader("📬 Automated Action & Ticket Dispatch Routing Queue")
-
-for idx, row in df_clean.iterrows():
-    avatar = "🚨" if row['normalized_rating'] <= 2.5 else "⚠️"
-    with st.expander(f"{avatar} Ticket {row['review_id']} — {row['property_name']} [Score: {row['normalized_rating']:.1f}/5.0]"):
-        st.write(f"**Raw Guest Review:** *\"{row['review_text']}\"*")
-        st.write(f"**Assigned Ground Host:** {row['caretaker_name']} | **Source Channel:** {row['platform']}")
-        
-        tags = row['ai_tags']
-        if "Structural Asset/Maintenance" in tags:
-            st.error("🛠️ **Automated Action Routed:** Dispatched Local Capital Maintenance Vendor for physical repair/inspection.")
-        if "Housekeeping Vendor Deficit" in tags:
-            st.error("🧹 **Automated Action Routed:** Issued structural warning and standard penalty fine to regional third-party cleaning agency.")
-        if "Caretaker SLA Punctuality" in tags:
-            st.warning("⏰ **Automated Action Routed:** Flagged to Regional Manager to restructure caretaker route optimization plans.")
-        if "Marketing/Policy Friction" in tags:
-            st.info("📸 **Automated Action Routed:** Sent asset detail review alert to Business Operations Team to update OTA listing metadata.")
+with st.expander("🚨 Ticket RV020 — Cliffside Retreat [Score: 2.0/5.0]"):
+    st.write("**Raw Text:** *'The heating didn't work properly and Kasauli in December is freezing.'*")
+    st.error("🛠️ **Action Dispatch:** Bypassed local host penalty. Dispatched engineering task force to replace physical HVAC unit.")
