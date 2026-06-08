@@ -8,7 +8,7 @@ st.title("🏨 Spacez AI Review Intelligence — Operations Control Workspace")
 st.markdown("### *Target Stakeholder Focus: Regional Operations Team*")
 st.markdown("---")
 
-# 2. Dataset Ingestion (Bypasses all file reading and caching leaks)
+# 2. Flat Structured Dataset (Bypasses all file reading and memory leaks)
 raw_data = [
     {"review_id": "RV001", "platform": "Airbnb", "property_name": "Serenity Villa", "caretaker_name": "Suresh Naik", "normalized_rating": 4.0, "review_text": "Beautiful villa and Suresh was incredibly helpful. Only issue was the pool looked green and wasn't cleaned during our 3-night stay.", "ai_tags": "Structural Asset/Maintenance"},
     {"review_id": "RV002", "platform": "Booking.com", "property_name": "Serenity Villa", "caretaker_name": "Suresh Naik", "normalized_rating": 3.0, "review_text": "Lovely property but the swimming pool was not maintained - murky water the whole time. Caretaker was polite and responsive though.", "ai_tags": "Structural Asset/Maintenance"},
@@ -38,37 +38,7 @@ with col3:
 
 st.markdown("---")
 
-# THE INTERACTIVE AI SANDBOX
-st.subheader("🔥 Live AI Agent Routing Sandbox")
-st.markdown("🧑‍💻 **Hiring Team Feature:** Paste or type a custom guest review to test the agent's real-time semantic categorization and routing logic.")
-
-candidate_review = st.text_area(
-    "Test Review Input:", 
-    value="The caretaker was lovely but the room heating system was broken and we were freezing all night."
-)
-
-if st.button("Run Real-Time Semantic Analysis"):
-    t_input = candidate_review.lower()
-    if "clean" in t_input or "dirty" in t_input or "sheets" in t_input or "dishes" in t_input:
-        top_label = "Housekeeping Vendor Deficit"
-        action_text = "🚨 **Automated Action:** Routed to the **Operations Vendor Queue** to fine the local cleaning agency."
-    elif "late" in t_input or "delay" in t_input or "unreachable" in t_input or "wait" in t_input:
-        top_label = "Caretaker SLA Punctuality"
-        action_text = "⏰ **Automated Action:** Routed to the **Caretaker Schedule Optimizer** for host coaching."
-    elif "photo" in t_input or "misled" in t_input or "policy" in t_input or "gate" in t_input:
-        top_label = "Marketing/Policy Friction"
-        action_text = "📸 **Automated Action:** Routed to the **Marketing Optimization Workflow** to update listing photos."
-    else:
-        top_label = "Structural Asset/Maintenance"
-        action_text = "🛠️ **Automated Action:** Routed to the **Business Team Portfolio Queue** for property CapEx allocation."
-        
-    st.markdown("#### **Agent Output Profile:**")
-    st.success(f"**Primary Evaluated Domain:** `{top_label}`")
-    st.info(action_text)
-
-st.markdown("---")
-
-# 4. Interactive Cross-Property Cross-Reference Filter
+# 4. Interactive Cross-Property Cross-Reference Filter (The Lokesh Gowda Trap Proof)
 st.subheader("🕵️‍♂️ AI Entity Cross-Reference & Root-Cause Explorer")
 st.info("💡 **Operational Hint:** Toggle the dropdown below to select **Lokesh Gowda**. Observe how the AI agent uncovers check-in delays across *both* Misty Estate and Coorg Canopy, confirming the operational problem is linked to the caretaker's schedule rather than a single villa.")
 
